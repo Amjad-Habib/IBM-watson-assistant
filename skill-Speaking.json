@@ -1,0 +1,511 @@
+{
+  "intents": [
+    {
+      "intent": "Delivery",
+      "examples": [
+        {
+          "text": "Do you have a shipping and delivery service?"
+        },
+        {
+          "text": "Do you have delivery?"
+        }
+      ],
+      "description": ""
+    },
+    {
+      "intent": "electronicBooks",
+      "examples": [
+        {
+          "text": "Do you have e-books?"
+        },
+        {
+          "text": "Do you sell e-books?"
+        }
+      ],
+      "description": ""
+    },
+    {
+      "intent": "else",
+      "examples": [
+        {
+          "text": "4:30pm-11:00pm"
+        },
+        {
+          "text": "9:00am- 11:00pm"
+        }
+      ],
+      "description": ""
+    },
+    {
+      "intent": "Jop",
+      "examples": [
+        {
+          "text": "Do you have a job?"
+        },
+        {
+          "text": "Do you have co-op training?"
+        },
+        {
+          "text": "Do you have summer training?"
+        },
+        {
+          "text": "Do you have training completed with employment?"
+        }
+      ],
+      "description": ""
+    },
+    {
+      "intent": "Offers",
+      "examples": [
+        {
+          "text": "What time are offers?"
+        },
+        {
+          "text": "When do you have offers?"
+        }
+      ],
+      "description": ""
+    },
+    {
+      "intent": "payingOff",
+      "examples": [
+        {
+          "text": "What are the available payment methods?"
+        },
+        {
+          "text": "What are the electronic payment methods available?"
+        }
+      ],
+      "description": ""
+    },
+    {
+      "intent": "payingOff2",
+      "examples": [
+        {
+          "text": "Do you have a cash on delivery service?"
+        },
+        {
+          "text": "Is cash on delivery service available?"
+        }
+      ],
+      "description": ""
+    },
+    {
+      "intent": "Query",
+      "examples": [
+        {
+          "text": "What time does it start?"
+        },
+        {
+          "text": "What time does the library open?"
+        },
+        {
+          "text": "When does the library open?"
+        },
+        {
+          "text": "when does the work begin?"
+        }
+      ],
+      "description": ""
+    },
+    {
+      "intent": "Speaking",
+      "examples": [
+        {
+          "text": "Hallo"
+        },
+        {
+          "text": "Hello"
+        },
+        {
+          "text": "hi"
+        },
+        {
+          "text": "Hi there"
+        },
+        {
+          "text": "Welcome"
+        }
+      ],
+      "description": ""
+    }
+  ],
+  "entities": [
+    {
+      "entity": "sys-percentage",
+      "values": [],
+      "fuzzy_match": true
+    }
+  ],
+  "metadata": {
+    "api_version": {
+      "major_version": "v2",
+      "minor_version": "2018-11-08"
+    }
+  },
+  "dialog_nodes": [
+    {
+      "type": "standard",
+      "title": "Anything else",
+      "output": {
+        "generic": [
+          {
+            "values": [
+              {
+                "text": "I didn't understand. You can try rephrasing."
+              },
+              {
+                "text": "Can you reword your statement? I'm not understanding."
+              },
+              {
+                "text": "I didn't get your meaning."
+              }
+            ],
+            "response_type": "text",
+            "selection_policy": "sequential"
+          }
+        ]
+      },
+      "conditions": "anything_else",
+      "dialog_node": "Anything else",
+      "previous_sibling": "node_1_1627765940869",
+      "disambiguation_opt_out": true
+    },
+    {
+      "type": "standard",
+      "title": "Delivery",
+      "output": {
+        "generic": [
+          {
+            "values": [
+              {
+                "text": "Yes, through these companies:\n-Aramex company\n-Speedsy company\n-Jack's company"
+              }
+            ],
+            "response_type": "text",
+            "selection_policy": "sequential"
+          }
+        ]
+      },
+      "conditions": "#Delivery",
+      "dialog_node": "node_10_1627765833741",
+      "previous_sibling": "node_9_1627765751606"
+    },
+    {
+      "type": "standard",
+      "title": "Function",
+      "output": {
+        "generic": [
+          {
+            "values": [
+              {
+                "text": "Please contact the Human Resources Department at ( careers at MyLibrary.com)."
+              }
+            ],
+            "response_type": "text",
+            "selection_policy": "sequential"
+          }
+        ]
+      },
+      "metadata": {
+        "_customization": {
+          "mcr": false
+        }
+      },
+      "conditions": "#Jop",
+      "dialog_node": "node_1_1627765940869",
+      "previous_sibling": "node_10_1627765833741"
+    },
+    {
+      "type": "standard",
+      "title": "Offers",
+      "output": {
+        "generic": [
+          {
+            "values": [
+              {
+                "text": "August and September."
+              }
+            ],
+            "response_type": "text",
+            "selection_policy": "sequential"
+          }
+        ]
+      },
+      "conditions": "#Offers",
+      "dialog_node": "node_2_1627765081818",
+      "previous_sibling": "node_9_1627764884000"
+    },
+    {
+      "type": "frame",
+      "title": "Query ",
+      "output": {
+        "generic": [
+          {
+            "title": "Select a day of the week?",
+            "options": [
+              {
+                "label": "Sunday ",
+                "value": {
+                  "input": {
+                    "text": "9:00am- 11:00pm"
+                  }
+                }
+              },
+              {
+                "label": "Monday ",
+                "value": {
+                  "input": {
+                    "text": "9:00am- 11:00pm"
+                  }
+                }
+              },
+              {
+                "label": "Tuesday",
+                "value": {
+                  "input": {
+                    "text": "9:00am- 11:00pm"
+                  }
+                }
+              },
+              {
+                "label": "Wednesday",
+                "value": {
+                  "input": {
+                    "text": "9:00am- 11:00pm"
+                  }
+                }
+              },
+              {
+                "label": "Thursday",
+                "value": {
+                  "input": {
+                    "text": "9:00am- 11:00pm"
+                  }
+                }
+              },
+              {
+                "label": "Friday",
+                "value": {
+                  "input": {
+                    "text": "9:00am- 11:00pm"
+                  }
+                }
+              },
+              {
+                "label": "Saturday",
+                "value": {
+                  "input": {
+                    "text": "4:30pm- 11:00pm"
+                  }
+                }
+              }
+            ],
+            "description": "",
+            "response_type": "option"
+          }
+        ]
+      },
+      "conditions": "#Query",
+      "dialog_node": "node_3_1627653936600",
+      "previous_sibling": "node_7_1627540235681"
+    },
+    {
+      "type": "standard",
+      "title": "Speaking ",
+      "output": {
+        "generic": [
+          {
+            "values": [
+              {
+                "text": "Hi there! How can I help you?"
+              }
+            ],
+            "response_type": "text",
+            "selection_policy": "sequential"
+          }
+        ]
+      },
+      "conditions": "#Speaking",
+      "dialog_node": "node_7_1627540235681",
+      "previous_sibling": "Welcome"
+    },
+    {
+      "type": "standard",
+      "title": "paying off",
+      "output": {
+        "generic": [
+          {
+            "values": [
+              {
+                "text": "You can pay by the following methods:\n-Credit Card (Visa, Master Card, ....)\n-Apple Pay\n-Payment at library fairs\n-Payment when receiving"
+              }
+            ],
+            "response_type": "text",
+            "selection_policy": "sequential"
+          }
+        ]
+      },
+      "conditions": "#payingOff",
+      "dialog_node": "node_8_1627765336223",
+      "previous_sibling": "node_9_1627765152815"
+    },
+    {
+      "type": "standard",
+      "title": "else",
+      "output": {
+        "generic": [
+          {
+            "values": [
+              {
+                "text": "Do you want anything else?"
+              }
+            ],
+            "response_type": "text",
+            "selection_policy": "sequential"
+          }
+        ]
+      },
+      "conditions": "#else",
+      "dialog_node": "node_9_1627764884000",
+      "previous_sibling": "node_3_1627653936600"
+    },
+    {
+      "type": "standard",
+      "title": "electronic books",
+      "output": {
+        "generic": [
+          {
+            "values": [
+              {
+                "text": "Yes, you can purchase e-books through our \"MyLibrary\" app on Apple and Android devices."
+              }
+            ],
+            "response_type": "text",
+            "selection_policy": "sequential"
+          }
+        ]
+      },
+      "conditions": "#electronicBooks",
+      "dialog_node": "node_9_1627765152815",
+      "previous_sibling": "node_2_1627765081818"
+    },
+    {
+      "type": "standard",
+      "title": "Payment2",
+      "output": {
+        "generic": [
+          {
+            "values": [
+              {
+                "text": "Yes, the cash on delivery service is currently available and it applies to some requests with a total amount of SR 5,000 as a maximum."
+              }
+            ],
+            "response_type": "text",
+            "selection_policy": "sequential"
+          }
+        ]
+      },
+      "conditions": "#payingOff2",
+      "dialog_node": "node_9_1627765751606",
+      "previous_sibling": "node_8_1627765336223"
+    },
+    {
+      "type": "response_condition",
+      "output": {
+        "generic": [
+          {
+            "values": [
+              {
+                "text": "Please contact the Human Resources Department at ( careers at MyLibrary.com)."
+              },
+              {
+                "text": ""
+              }
+            ],
+            "response_type": "text",
+            "selection_policy": "sequential"
+          }
+        ]
+      },
+      "parent": "node_1_1627765940869",
+      "disabled": true,
+      "dialog_node": "response_10_1627766836204"
+    },
+    {
+      "type": "response_condition",
+      "output": {
+        "text": {
+          "values": [],
+          "selection_policy": "sequential"
+        }
+      },
+      "parent": "node_1_1627765940869",
+      "disabled": true,
+      "conditions": "$webhook_result_1",
+      "dialog_node": "response_10_1627766837633",
+      "previous_sibling": "response_10_1627766836204"
+    },
+    {
+      "type": "response_condition",
+      "output": {
+        "text": {
+          "values": [],
+          "selection_policy": "sequential"
+        }
+      },
+      "parent": "node_1_1627765940869",
+      "disabled": true,
+      "conditions": "anything_else",
+      "dialog_node": "response_7_1627766841023",
+      "previous_sibling": "response_10_1627766837633"
+    },
+    {
+      "type": "standard",
+      "title": "Welcome",
+      "output": {
+        "generic": [
+          {
+            "values": [
+              {
+                "text": "Hello I'm Amjad.\nHow can I help you?"
+              },
+              {
+                "text": ""
+              }
+            ],
+            "response_type": "text",
+            "selection_policy": "sequential"
+          }
+        ]
+      },
+      "conditions": "welcome",
+      "dialog_node": "Welcome"
+    }
+  ],
+  "counterexamples": [],
+  "system_settings": {
+    "off_topic": {
+      "enabled": true
+    },
+    "disambiguation": {
+      "prompt": "Did you mean:",
+      "enabled": true,
+      "randomize": true,
+      "max_suggestions": 5,
+      "suggestion_text_policy": "title",
+      "none_of_the_above_prompt": "None of the above"
+    },
+    "human_agent_assist": {
+      "prompt": "Did you mean:"
+    },
+    "intent_classification": {
+      "training_backend_version": "v2"
+    },
+    "spelling_auto_correct": true
+  },
+  "learning_opt_out": false,
+  "name": "Speaking",
+  "language": "en",
+  "description": ""
+}
