@@ -37,7 +37,7 @@
 # <div dir="ltr">Entity</div>
 
 ## <div dir="ltr">Intents are implemented on entities, which contain relevant information that the chatbot will use to respond.</div>
-![much-a image](https://cloud.ibm.com/docs-content/v1/content/5c1b97d453d5af69d9a584a7d688a76333a13c1c/assistant/images/entities-synonyms-added.png)
+![Entity ](https://user-images.githubusercontent.com/85652061/127760270-cdf4a945-fdf9-463a-b672-bf3c45592b7c.png)
 
 
 
