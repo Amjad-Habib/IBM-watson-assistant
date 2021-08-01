@@ -4,7 +4,7 @@
 ## <div dir="ltr">Before creating a chatbot</div> 
 #### <div dir="ltr"> First you have to head to Watson's page and sign up. Use the free package that allows you to create a free chatbot for 30 days</div>
 #### <p align="center"> [IBM Watson page](https://www.ibm.com/cloud/watson-assistant/)</p>
-==========================================================================================
+===============================================================================================
 # <div dir="ltr">Create a chatbot</div> 
 
 ### <div dir="ltr">Click on "create a new assistant" to create your own assistant</div>
@@ -48,7 +48,7 @@
 ### <div dir="ltr">To be a dialog tree, click on [*Add a node*], then put a name for it that benefits from its purpose and add the intention that serves that purpose. Now you can add the response below, choosing the type of response (text, options, image, etc..) and you can also put a reply group and Arrange the way they are displayed (randomly, incrementally, etc...)</div>
 
 
-==========================================================================================
+===============================================================================================
 
 
 # <div dir="ltr">How to try the chatbot؟ </div>
