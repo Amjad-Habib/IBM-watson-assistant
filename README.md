@@ -51,7 +51,7 @@
 ============================================================================
 
 
-# <div dir="ltr">How to try the chatbot؟ </div>
+# <div dir="ltr">How to try the chatbot? </div>
 ### <div dir="ltr"> You can click on the ![much-a image](https://cloud.ibm.com/docs-content/v1/content/5c1b97d453d5af69d9a584a7d688a76333a13c1c/assistant/images/try-it.png) at the top of the page in this way you can train the bot and Correcting errors to improve performance.</div>
 
 
